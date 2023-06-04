@@ -46,10 +46,10 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     try:
                         value = int(value)
-                    except:
+                    except Exception:
                         try:
                             value = float(value)
-                        except:
+                        except Exception:
                             continue
                 new_dict[key] = value
         return new_dict
@@ -140,7 +140,7 @@ class HBNBCommand(cmd.Cmd):
                                 if args[2] in integers:
                                     try:
                                         args[3] = int(args[3])
-                                    except:
+                                    except Exception:
                                         args[3] = 0
                                 elif args[2] in floats:
                                     try:
@@ -159,6 +159,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** instance id missing **")
         else:
             print("** class doesn't exist **")
-            
+
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
